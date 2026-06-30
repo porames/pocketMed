@@ -10,7 +10,8 @@ import {
     Check,
     Minus,
 } from "lucide-react";
-
+import Tokens from "./components/tokens";
+import ManagementSection from "./components/stroke/managementSection";
 /* ----------------------------------------------------------------------
    Design tokens
    Warm paper background instead of clinical white, deep teal for the
@@ -569,6 +570,8 @@ function ItemRow({ item, isOpen, onToggle, value, onSelect, rowRef }: ItemRowPro
     );
 }
 
+
+
 /* ----------------------------------------------------------------------
    Root
 ------------------------------------------------------------------------- */
@@ -613,6 +616,7 @@ export default function Stroke() {
           * { transition: none !important; }
         }
       `}</style>
+            <Tokens />
             <div className="w-full max-w-2xl px-4 pb-16 pt-6">
                 {/* Page heading */}
                 <button
@@ -641,7 +645,7 @@ export default function Stroke() {
                 </div>
 
                 <div className="rounded-xl p-4 bg-white">
-                    <h3 className="text-base font-semibold mb-2">NIHSS assessment for students</h3>
+                    <h3 className="text-base font-semibold mb-2" style={{ color: T.ink }}>NIHSS assessment for students</h3>
                     <div
                         className="sticky top-3 z-40 rounded-2xl px-4 py-3.5 mb-5 flex items-center gap-4"
                         style={{ background: T.card, border: `1px solid ${T.border}`, boxShadow: "0 6px 24px rgba(28,36,32,0.07)" }}
@@ -700,8 +704,9 @@ export default function Stroke() {
                             />
                         ))}
                     </div>
-                    <button></button>
+
                 </div>
+                <ManagementSection nihssScore={Number(total)} />
             </div>
         </div>
     );
