@@ -86,3 +86,9 @@ body {
   transform: translateY(0);
   box-shadow: 0 2px 6px rgba(16, 32, 46, 0.12);
 }
+
+input,
+textarea,
+select {
+  font-size: 16px;
+}
