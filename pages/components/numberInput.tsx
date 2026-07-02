@@ -5,11 +5,12 @@ interface NumberInputProps {
     onChange: (value: number | undefined) => void;
     placeholder?: string;
     unit?: string;
+    flexDirection?: string;
 }
 
-export default function NumberInput({ label, value, onChange, placeholder, unit }: NumberInputProps) {
+export default function NumberInput({ label, value, onChange, placeholder, unit, flexDirection }: NumberInputProps) {
     return (
-        <div className="flex items-center gap-4">
+        <div className={`flex ${flexDirection == "row" ? "flex-row" : "flex-col"} gap-1 mb-3`}>
             <label className="w-44 text-sm font-medium" style={{ color: "var(--muted)" }}>{label}</label>
             <div className="flex-1 flex items-center">
                 <input

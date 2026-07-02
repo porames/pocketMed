@@ -7,29 +7,8 @@ import Link from 'next/link';
 function Tokens() {
     return (
         <style>{`
-      @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap');
-      .elyte-root {
-        --ink: #10202E;
-        --muted: #5C7080;
-        --bg: #F6F7F9;
-        --border: #E3E7EA;
-        --teal: #0E7C7B;
-        font-family: 'IBM Plex Sans', sans-serif;
-        color: var(--ink);
-        background: var(--bg);
-      }
       .mono { font-family: 'IBM Plex Mono', monospace; font-weight: 600; }
-      .tile {
-        transition: transform .15s ease, box-shadow .15s ease;
-      }
-      .tile:not(:disabled):hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 20px rgba(16,32,46,0.18);
-      }
-      .tile:not(:disabled):active {
-        transform: translateY(0);
-        box-shadow: 0 2px 6px rgba(16,32,46,0.12);
-      }
+
     `}</style>
     );
 }
@@ -48,7 +27,7 @@ function CategoryTile({ href, title, gradient, disabled }: CategoryTileProps) {
             className="tile rounded-xl py-5 px-4 flex items-center justify-start text-left w-full disabled:opacity-40 disabled:cursor-not-allowed"
             style={{ background: gradient, border: 'none' }}
         >
-            <span className="text-base font-medium text-white">{title}</span>
+            <span className="text-base font-bold text-white">{title}</span>
         </button>
     );
 
@@ -103,6 +82,11 @@ export default function Home() {
                             href="/stroke"
                             title="Stroke"
                             gradient="linear-gradient(135deg, #D8453A, #8E2A22)"
+                        />
+                        <CategoryTile
+                            href="/high_alert_drug"
+                            title="High Alert Drug"
+                            gradient="linear-gradient(135deg, #f3722c, #f9c74f)"
                         />
                     </div>
                 </div>

@@ -10,15 +10,8 @@ import {
     Check,
     Minus,
 } from "lucide-react";
-import Tokens from "./components/tokens";
 import ManagementSection from "./components/stroke/managementSection";
-/* ----------------------------------------------------------------------
-   Design tokens
-   Warm paper background instead of clinical white, deep teal for the
-   primary clinical action, and a reserved red used only for urgency
-   (BETA flag, severe-score states) — stroke care is time-critical, so
-   red is meaningful here rather than decorative.
-------------------------------------------------------------------------- */
+
 const T = {
     paper: "#F6F7F9",
     card: "#FFFFFF",
@@ -611,12 +604,6 @@ export default function Stroke() {
 
     return (
         <div className="min-h-screen w-full flex justify-center" style={{ background: T.paper }}>
-            <style>{`
-        @media (prefers-reduced-motion: reduce) {
-          * { transition: none !important; }
-        }
-      `}</style>
-            <Tokens />
             <div className="w-full max-w-2xl px-4 pb-16 pt-6">
                 {/* Page heading */}
                 <button
