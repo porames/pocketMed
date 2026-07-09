@@ -25,7 +25,7 @@ function CategoryTile({ href, title, gradient, disabled }: CategoryTileProps) {
         <button
             disabled={disabled}
             className="tile rounded-xl py-5 px-4 flex items-center justify-start text-left w-full disabled:opacity-40 disabled:cursor-not-allowed"
-            style={{ background: gradient, border: 'none' }}
+            style={{ background: gradient, border: 'none', height: '100%' }}
         >
             <span className="text-base font-bold text-white">{title}</span>
         </button>
@@ -86,7 +86,19 @@ export default function Home() {
                         <CategoryTile
                             href="/high_alert_drug"
                             title="High Alert Drug"
-                            gradient="linear-gradient(135deg, #f3722c, #f9c74f)"
+                            gradient="linear-gradient(135deg, #E63946, #F4A300)"
+                        />
+                        <CategoryTile
+                            href="/acute_coronary_syndrome"
+                            title="Acute Coronary Syndrome"
+                            gradient="linear-gradient(135deg, #FF6B6B, #C1121F)"
+                            disabled={true}
+                        />
+                        <CategoryTile
+                            href="/traumatic_brain_injury"
+                            title="Traumatic Brain Injury"
+                            gradient="linear-gradient(135deg, #5B4B8A, #2E1F47)"
+                            disabled={true}
                         />
                     </div>
                 </div>
